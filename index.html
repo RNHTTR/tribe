@@ -1,0 +1,300 @@
+<!-- TODO
+  Handle empty values for category, item name
+  Category is gray even after selection
+  Submit button should be greyed out until an item is added
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>tribe</title>
+
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<!-- TODO! Handle what happens when user is in the red, i.e. did not meet savings goals! -->
+<body>
+  <div class="navbar">
+    <nav class="teal lighten-2" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b class="lime-text text-accent-1">t</b>ri<b class="lime-text text-accent-1">b</b>e</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Log In</a></li>
+          <li><a class="btn lime accent-1 black-text" href="#">Sign Up</a></li>
+          <li><a class="btn white accent-1 black-text" href="https://connect.stripe.com/oauth/authorize?client_id=ca_GxQrucZAXpbeyH3qp3dVX8aEEWJJFevx&state=TRIBETEST&scope=read_write&response_type=code&stripe_user[email]=user@example.com&stripe_user[url]=example.com">Merchant Registration</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="center">
+        <h1 class="header teal-text text-lighten-3">Help those in need. Donate to local businesses.</h1>
+        <h5 class="header col s12 light">
+          Covid-19 is wreaking havoc across the Tampa Bay community. Please, if you can, help.</h5>
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text text-lighten-3">
+                <i class="material-icons">
+                  attach_money
+                </i>
+              </h2>
+              <h5 class="center teal-text text-darken-2">General Donations</h5>
+              <p class="light">
+                Make a donation to the general community. These donations will be pooled 
+                and distributed evenly amongst small businesses in the Tampa Bay community.
+                General donations will also be used to pay tribe's bills. So long as tribe's
+                founders are employed by their day jobs, they won't take a cut.
+              </p>
+            </div>
+          </div>        
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text text-lighten-3">
+                <i class="material-icons">
+                    lightbulb_outline
+                </i>
+              </h2>
+              <h5 class="center teal-text text-darken-2">Specific Donations</h5>
+              <p class="light">
+                Alternatively, you can make a donation to your favorite small business listed below. 
+                ALL PROCEEDS WILL GO DIRECTLY TO THE BUSINESS OF YOUR CHOICE.
+              </p>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center teal-text text-lighten-3">
+                <i class="material-icons">
+                    lightbulb_outline
+                </i>
+              </h2>
+              <h5 class="center teal-text text-darken-2">Gift Cards</h5>
+              <p class="light">
+                We are M.toast({html: this.status});ng hard to make virtual gift cards to your favorite small business a possibility. 
+                When we figure it out, we'll make it possible to buy gift cards for future use at a 25% discount. 
+                We'll keep you posted!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="">
+            <a href="#donate" class="btn-large waves-effect waves-light lime accent-1 black-text">DONATE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="container center">
+    <br>
+    <hr>
+    <br>
+    <h4 class="light grey-text">About tribe, and why We Need Your Help</h4>
+    <div class="row">
+      <div class="col s12">
+        <p class="light">
+          Covid-19 is wreaking havoc throughout the world. The Tampa Bay community is no exception; 
+          businesses and people throughout the region are suffering. Bars and restaurants, dental offices, 
+          retail; you name it, they are affected. 
+          <br><br>
+          In order to provide any support we can, we are starting tribe, a small business aggregator that 
+          allows users to donate to small businesses in their community. If you are still able to earn a 
+          paycheck, please consider making a donation. <b>We are a tribe; we are all in this together.</b>
+          <br><br>
+          All proceeds from donations that are given by you to a specific business will go directly 
+          to the business. tribe won't take a cent. Proceeds from donations that are given by you to 
+          the community at large will go towards operational expenses (that is, cloud services) so that 
+          tribe can continue to operate. All extra money will be distributed evenly each week between all of the 
+          businesses registered with tribe. This will continue as long as anyone who works on tribe does not 
+          get laid off and as long as enough donations are coming in to keep the lights on.
+          <br><br>
+          If tribe becomes a success for the Tampa Bay community, we will open it up for businesses across the country.
+          <br><br>
+          <h5 class="grey-text">How is this different from GoFundMe?</h5>
+          GoFundMe is designed for individual causes. Each company would have to register their 
+          own GoFundMe. This would be a challenge for the company to market it. It would also 
+          be difficult for genorous donators to find as well as raise money for multiple businesses 
+          in the community. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container center">
+    <br>
+    <hr>
+    <br>
+    <h4 id="donate" class="light grey-text">Donate</h4>
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card">
+          <div class="card-image">
+            <img src="static/images/tpa.jpg">
+            <span class="card-title">Tampa Bay</span>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+          </div>
+          <div class="card-content">
+            <br>
+            <p>Make a donation to all small businesses in Tampa Bay that are registered with tribe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="static/images/spaddys.png">
+            <span class="card-title"></span>
+            <a id="spaddys" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+          </div>
+          <div class="card-content">
+            <br>
+            <p>Spaddy's Coffee Company is a locally owned coffee shop located in Tampa, Fl with a focus on coffee & community. We offer a variety of specialty coffee offerings, as well as tea, cookies, cuban bread and light bites. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="static/images/urbanbungalow.jpeg">
+            <span class="card-title"></span>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+          </div>
+          <div class="card-content">
+            <br>
+            <br>
+            <br>
+            <p>Urban Bungalow is your one stop destination when it comes to all of your home essentials.  We hand select unique items from across the country. From furniture to gourmet provisions, lifestyle and home gifts, we have a rich collection to suit any taste.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="static/images/whateverpops.png">
+            <span class="card-title"></span>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+          </div>
+          <div class="card-content">
+            <br>
+            <p>We serve handcrafted Ice Pops, house-made Gelato, Superfood Açaí Bowls, locally roasted Coffee, fresh-fruit Smoothies and Waffles-on-a-Stick. Yes, that’s right, Waffles-on-a-Stick.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <form target="_blank" method="POST" action="dashboard.html" action="javascript:;" onsubmit="sendToDashboard()"> -->
+    <!-- <form> -->
+    <!-- <form id="formEntry" action="javascript:;" onsubmit="sendToDashboard(this)"> -->
+      <div class="center">
+        <button class="btn-large waves-effect waves-light lime accent-1 black-text" type="submit" name="action">Submit
+          <i class="material-icons right">launch</i>
+        </button>
+      </div>
+    </form>
+    </div>
+
+    <br><br>
+
+  <!-- Footer -->
+  <footer class="page-footer teal lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Donate</h5>
+          <p class="grey-text text-lighten-4">
+            TODO
+          </p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Resources</h5>
+          <ul>
+            <li><a class="lime-text text-accent-1" href="https://www.fast.ai/2020/03/09/coronavirus/" target="_blank" rel="noopener noreferrer">
+              - Covid-19, your community, and you — a data science perspective
+            </a></li>
+            <li><a class="lime-text text-accent-1" href="https://www.cdc.gov/coronavirus/2019-ncov/" target="_blank" rel="noopener noreferrer">
+              - CDC Covid-19 Guide
+            </a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul class="footer-link">
+            <li><a class="lime-text text-accent-1" href="#!"><i class="material-icons">email</i></a></li>
+            <li><a class="lime-text text-accent-1" href="#!">GitHub</a></li> <!--Github icon-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Inspired by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+    document.getElementById("spaddys").addEventListener('click', donate);
+    function donate()
+    {
+      const api_url = "http://127.0.0.1:4242/donate";
+      const stripeAccount = '';
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          const sessionId = this.responseText;
+          const stripe = Stripe('', {
+            stripeAccount: stripeAccount
+          });
+          stripe.redirectToCheckout({
+            // Make the id field from the Checkout Session creation API response
+            // available to this file, so you can provide it as parameter here
+            // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+            sessionId: sessionId
+          }).then(function (result) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer
+            // using `result.error.message`.
+            M.toast({html: "whoops"})
+          });
+        } else {
+          M.toast({html: this.status});
+        }
+      };
+      xhr.open("POST", api_url, true);
+      // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      data = {
+        "line_items": [{
+          "name": "one-time donation",
+          "amount": "100",
+          "currency": "usd",
+          "quantity": 1
+        }],
+        "company": "spaddys",
+        "stripe_account": stripeAccount
+      }
+      xhr.send(JSON.stringify(data));
+    }
+  </script>
+  </body>
+</html>

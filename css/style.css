@@ -1,0 +1,59 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.cell {
+  border: 0 !important;
+}
+
+.cell .select-wrapper input.select-dropdown {
+  border: 0 !important;
+  /* border-bottom: 0 !important; */
+  color: rgba(0, 0, 0, 0.18);
+}
+
+/* tr .cell {
+  outline: 0 !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+} */
+
+hr {
+  border-color: #009688;
+}
+
+.nested-collapsible {
+  /* border-left: 0 !important;
+  border-right: 0 !important; */
+  /* border: 0 !important; */
+  
+  display: block;
+  /* margin-bottom: 0; */
+  /* display: none; */
+}
+
+.nested-collapsible-shadow {
+  box-shadow: none;
+  border: 0 !important;
+  -webkit-box-shadow: 0 !important;
+  /* border-bottom: 0 !important; */
+}
+
+.collapsible-body .nested-collapsible-border-none {
+  border-bottom: 0 !important;
+}
+
+.chevron {
+  vertical-align: middle;
+}
