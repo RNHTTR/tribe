@@ -57,3 +57,20 @@ hr {
 .chevron {
   vertical-align: middle;
 }
+
+
+#application-modal .modal {
+  height: 80%;
+}
+
+.input-group {
+  display: table;
+}
+
+.input-group input, .suffix {
+  display: table-cell;
+}
+
+.suffix {
+  width:1%;
+}

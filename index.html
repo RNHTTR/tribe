@@ -10,8 +10,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>tribe</title>
 
-  <script src="https://js.stripe.com/v3/"></script>
-
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -23,13 +21,19 @@
     <nav class="teal lighten-2" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b class="lime-text text-accent-1">t</b>ri<b class="lime-text text-accent-1">b</b>e</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Log In</a></li>
-          <li><a class="btn lime accent-1 black-text" href="#">Sign Up</a></li>
-          <li><a class="btn white accent-1 black-text" href="https://connect.stripe.com/oauth/authorize?client_id=ca_GxQrucZAXpbeyH3qp3dVX8aEEWJJFevx&state=TRIBETEST&scope=read_write&response_type=code&stripe_user[email]=user@example.com&stripe_user[url]=example.com">Merchant Registration</a></li>
+          <li><a href="https://www.gofundme.com">DONATE <i class="material-icons right">launch</i></a></li>
+          <li><a class="btn lime accent-1 black-text" href="#gift-cards">Buy a Gift Card</a></li>
+          <li><a class="btn white accent-1 black-text modal-trigger" href="#application-modal">Relief Application</a></li>
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Navbar Link</a></li>
+          <li><div class="center user-view teal lighten-2">
+            <span class="brand-logo"><b class="lime-text text-accent-1">t</b>ri<b class="lime-text text-accent-1">b</b>e</span>
+            <br>
+          </div></li>
+          <li><a class="btn white accent-1 black-text" href="https://www.gofundme.com">DONATE <i class="material-icons right">launch</i></a></li>
+          <li><a class="btn white accent-1 black-text" href="#gift-cards">Buy a Gift Card</a></li>
+          <li><a class="btn white accent-1 black-text modal-trigger" href="#application-modal">Relief Application</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
@@ -43,54 +47,42 @@
         <h5 class="header col s12 light">
           Covid-19 is wreaking havoc across the Tampa Bay community. Please, if you can, help.</h5>
         <div class="row">
-          <div class="col s12 m4">
+          <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center teal-text text-lighten-3">
                 <i class="material-icons">
                   attach_money
                 </i>
               </h2>
-              <h5 class="center teal-text text-darken-2">General Donations</h5>
+              <h5 class="center teal-text text-darken-2">Donations</h5>
               <p class="light">
-                Make a donation to the general community. These donations will be pooled 
-                and distributed evenly amongst small businesses in the Tampa Bay community.
-                General donations will also be used to pay tribe's bills. So long as tribe's
-                founders are employed by their day jobs, they won't take a cut.
+                I started a GoFundMe to raise money for small businesses local to the Tampa Bay Area. 
+                All proceeds will go directly to businesses registered with the platform. To apply for 
+                assistance, <a href="#">click here</a>.
               </p>
+              <div>
+                <a href="https://www.gofundme.com" class="btn-large waves-effect waves-light lime accent-1 black-text">DONATE<i class="material-icons right">launch</i></a>
+              </div>
             </div>
           </div>        
-          <div class="col s12 m4">
+          <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center teal-text text-lighten-3">
                 <i class="material-icons">
-                    lightbulb_outline
-                </i>
-              </h2>
-              <h5 class="center teal-text text-darken-2">Specific Donations</h5>
-              <p class="light">
-                Alternatively, you can make a donation to your favorite small business listed below. 
-                ALL PROCEEDS WILL GO DIRECTLY TO THE BUSINESS OF YOUR CHOICE.
-              </p>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center teal-text text-lighten-3">
-                <i class="material-icons">
-                    lightbulb_outline
+                  card_giftcard
                 </i>
               </h2>
               <h5 class="center teal-text text-darken-2">Gift Cards</h5>
               <p class="light">
-                We are M.toast({html: this.status});ng hard to make virtual gift cards to your favorite small business a possibility. 
-                When we figure it out, we'll make it possible to buy gift cards for future use at a 25% discount. 
-                We'll keep you posted!
+                Consider giving and getting something in return! Follow the links below 
+                to buy a gift card from your favorite company listed below.
               </p>
+              <br>
+              <div>
+                <a href="#gift-cards" class="btn-large waves-effect waves-light lime accent-1 black-text">BUY A GIFT CARD</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="">
-            <a href="#donate" class="btn-large waves-effect waves-light lime accent-1 black-text">DONATE</a>
         </div>
       </div>
     </div>
@@ -101,64 +93,15 @@
     <br>
     <hr>
     <br>
-    <h4 class="light grey-text">About tribe, and why We Need Your Help</h4>
-    <div class="row">
-      <div class="col s12">
-        <p class="light">
-          Covid-19 is wreaking havoc throughout the world. The Tampa Bay community is no exception; 
-          businesses and people throughout the region are suffering. Bars and restaurants, dental offices, 
-          retail; you name it, they are affected. 
-          <br><br>
-          In order to provide any support we can, we are starting tribe, a small business aggregator that 
-          allows users to donate to small businesses in their community. If you are still able to earn a 
-          paycheck, please consider making a donation. <b>We are a tribe; we are all in this together.</b>
-          <br><br>
-          All proceeds from donations that are given by you to a specific business will go directly 
-          to the business. tribe won't take a cent. Proceeds from donations that are given by you to 
-          the community at large will go towards operational expenses (that is, cloud services) so that 
-          tribe can continue to operate. All extra money will be distributed evenly each week between all of the 
-          businesses registered with tribe. This will continue as long as anyone who works on tribe does not 
-          get laid off and as long as enough donations are coming in to keep the lights on.
-          <br><br>
-          If tribe becomes a success for the Tampa Bay community, we will open it up for businesses across the country.
-          <br><br>
-          <h5 class="grey-text">How is this different from GoFundMe?</h5>
-          GoFundMe is designed for individual causes. Each company would have to register their 
-          own GoFundMe. This would be a challenge for the company to market it. It would also 
-          be difficult for genorous donators to find as well as raise money for multiple businesses 
-          in the community. 
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container center">
+    <h3 class="grey-text">Our Community's Incredible Companies</h3>
     <br>
-    <hr>
-    <br>
-    <h4 id="donate" class="light grey-text">Donate</h4>
-    <div class="row">
-      <div class="col s12 m6 offset-m3">
-        <div class="card">
-          <div class="card-image">
-            <img src="static/images/tpa.jpg">
-            <span class="card-title">Tampa Bay</span>
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
-          </div>
-          <div class="card-content">
-            <br>
-            <p>Make a donation to all small businesses in Tampa Bay that are registered with tribe.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+    <div class="row" id="gift-cards">
       <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
             <img src="static/images/spaddys.png">
             <span class="card-title"></span>
-            <a id="spaddys" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+            <a href="https://www.spaddyscoffee.com" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">payment</i></a>
           </div>
           <div class="card-content">
             <br>
@@ -171,14 +114,13 @@
           <div class="card-image">
             <img src="static/images/urbanbungalow.jpeg">
             <span class="card-title"></span>
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+            <a href="https://www.urbanbungalowtampa.com" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">payment</i></a>
           </div>
           <div class="card-content">
             <br>
             <br>
             <br>
             <p>Urban Bungalow is your one stop destination when it comes to all of your home essentials.  We hand select unique items from across the country. From furniture to gourmet provisions, lifestyle and home gifts, we have a rich collection to suit any taste.</p>
-
           </div>
         </div>
       </div>
@@ -187,7 +129,7 @@
           <div class="card-image">
             <img src="static/images/whateverpops.png">
             <span class="card-title"></span>
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">attach_money</i></a>
+            <a href="http://whateverpops.com/" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">payment</i></a>
           </div>
           <div class="card-content">
             <br>
@@ -200,12 +142,89 @@
     <!-- <form target="_blank" method="POST" action="dashboard.html" action="javascript:;" onsubmit="sendToDashboard()"> -->
     <!-- <form> -->
     <!-- <form id="formEntry" action="javascript:;" onsubmit="sendToDashboard(this)"> -->
-      <div class="center">
-        <button class="btn-large waves-effect waves-light lime accent-1 black-text" type="submit" name="action">Submit
-          <i class="material-icons right">launch</i>
+      <!-- <div class="center">
+        <button class="btn-large waves-effect waves-light lime accent-1 black-text" type="submit" name="action">Relief 
         </button>
+      </div> -->
+       <!-- Modal Trigger -->
+      <a class="btn-large waves-effect waves-light lime accent-1 black-text modal-trigger" href="#application-modal">Apply for Relief</a>
+
+      <!-- Modal Structure -->
+      <div id="application-modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <div class="container center">
+            <h4 class="grey-text">Relief Fund Application</h4>
+            <div class="row">
+              <form id="application-form" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" class="validate" required>
+                    <label for="name">Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate" required="required">
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone_iphone</i>
+                    <input id="phone" type="tel" class="validate" required>
+                    <label for="phone">Phone</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="Funding requested to support your business (lower the better)">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input id="goal" type="number" class="validate" required>
+                    <label for="goal">Fundraising Goal</label>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">today</i>
+                    <input type="text" class="datepicker" id="date">
+                    <label for="date">Fundraising End Date</label>
+                  </div>
+                </div> -->
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to your business' website">
+                    <i class="material-icons prefix">insert_link</i>
+                    <input type="text" id="business_url" class="validate" required>
+                    <label for="business_url">Company Website</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to you sell gift cards">
+                    <i class="material-icons prefix">card_giftcard</i>
+                    <input type="text" id="gift_card_url">
+                    <label for="gift_card_url">Gift Card URL</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A brief description of you, your company, and your current situation">
+                    <i class="material-icons prefix">library_books</i>
+                    <textarea id="story" class="materialize-textarea validate" data-length="2000" required></textarea>
+                    <label for="story">Your Story</label>
+                    <!-- <span class="helper-text">A brief description of you, your company, and your current situation</span> -->
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="input-field" >
+                    <input type="submit" class=" waves-effect waves-green btn-flat" value="SUBMIT">
+                  </div>
+                </div> -->
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="red white-text lighten-2 waves-effect waves-teal btn-flat">SUBMIT</button>
+        </div>
+      </form>
       </div>
-    </form>
     </div>
 
     <br><br>
@@ -252,49 +271,79 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   var elems = document.querySelectorAll('.datepicker');
+    //   var instances = M.Datepicker.init(elems,{});
+    //   var elems = document.querySelectorAll('.modal');
+    //   var instances = M.Modal.init(elems);
+    // });
+    $(document).ready(function(){
+      // $('.datepicker').datepicker();
+      $('.sidenav').sidenav();
+      $('.modal').modal();
+      $('.tooltipped').tooltip();
+    });
+  </script>
   <script type="text/javascript">
-    document.getElementById("spaddys").addEventListener('click', donate);
-    function donate()
-    {
-      const api_url = "http://127.0.0.1:4242/donate";
-      const stripeAccount = '';
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          const sessionId = this.responseText;
-          const stripe = Stripe('', {
-            stripeAccount: stripeAccount
-          });
-          stripe.redirectToCheckout({
-            // Make the id field from the Checkout Session creation API response
-            // available to this file, so you can provide it as parameter here
-            // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-            sessionId: sessionId
-          }).then(function (result) {
-            // If `redirectToCheckout` fails due to a browser or network
-            // error, display the localized error message to your customer
-            // using `result.error.message`.
-            M.toast({html: "whoops"})
-          });
-        } else {
-          M.toast({html: this.status});
-        }
-      };
-      xhr.open("POST", api_url, true);
-      // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      data = {
-        "line_items": [{
-          "name": "one-time donation",
-          "amount": "100",
-          "currency": "usd",
-          "quantity": 1
-        }],
-        "company": "spaddys",
-        "stripe_account": stripeAccount
+    // document.getElementById("spaddys").addEventListener('click', donate);
+    // function donate()
+    // {
+    //   const api_url = "http://127.0.0.1:4242/donate";
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //       M.toast({html: "Thank you!"})
+    //     } else {
+    //       M.toast({html: this.status});
+    //     }
+    //   };
+    //   xhr.open("POST", api_url, true);
+    //   http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //   xhr.send(JSON.stringify(data));
+    // }
+    window.addEventListener( "load", function () {
+      function sendData(data) {
+        const XHR = new XMLHttpRequest();
+
+        // Define what happens on successful data submission
+        XHR.addEventListener( "load", function(event) {
+          alert( event.target.responseText );
+        } );
+
+        // Define what happens in case of error
+        XHR.addEventListener( "error", function( event ) {
+          alert( 'Oops! Something went wrong.' );
+        } );
+
+        // Set up our request
+        XHR.open( "POST", "https://xjgwkkfzr7.execute-api.us-east-1.amazonaws.com/pre-dev/donate" );
+        XHR.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        // The data sent is what the user provided in the form
+        XHR.send( JSON.stringify( data ) );
       }
-      xhr.send(JSON.stringify(data));
-    }
+    
+      // Access the form element...
+      let form = document.getElementById( "application-form" );
+
+      // ...and take over its submit event.
+      form.addEventListener( "submit", function ( event ) {
+        event.preventDefault();
+        // TODO: Data validation (e.g. ensure phone numbers are phone numbers, emails are emails, data is present, etc.)
+        const data = {
+          "name": event.target.elements[0].value,
+          "email": event.target.elements[1].value,
+          "phone": event.target.elements[2].value,
+          "goal": event.target.elements[3].value,
+          // "date": event.target.elements[4].value,
+          "business_url": event.target.elements[4].value,
+          "gift_card_url": event.target.elements[5].value,
+          "story": event.target.elements[6].value
+        }
+        // console.log(data);
+        sendData( data );
+      } );
+    } );
   </script>
   </body>
 </html>
