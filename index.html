@@ -17,7 +17,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="https://www.gofundme.com" target="_blank" rel="noopener noreferrer">DONATE <i class="material-icons right">launch</i></a></li>
           <li><a class="btn lime accent-1 black-text" href="#gift-cards">Buy a Gift Card</a></li>
-          <li><a class="btn white accent-1 black-text modal-trigger" href="#application-modal">Donation Share Application</a></li>
+          <li><a class="btn white accent-1 black-text modal-trigger" href="#relief-application-modal">Donation Share Application</a></li>
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
@@ -27,7 +27,7 @@
           </div></li>
           <li><a class="btn white accent-1 black-text" href="https://www.gofundme.com" target="_blank" rel="noopener noreferrer">DONATE <i class="material-icons right">launch</i></a></li>
           <li><a class="btn white accent-1 black-text" href="#gift-cards">Buy a Gift Card</a></li>
-          <li><a class="btn white accent-1 black-text modal-trigger" href="#application-modal">Donation Share App</a></li>
+          <li><a class="btn white accent-1 black-text modal-trigger" href="#relief-application-modal">Donation Share App</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
@@ -52,7 +52,7 @@
               <p class="light">
                 I started a GoFundMe to raise money for small businesses local to the Tampa Bay Area. 
                 All proceeds will go directly to businesses registered with the platform. To apply to 
-                receive a share of donations or list your gift cards for sale, <a href="#">click here</a>.
+                receive a share of donations, <a class="modal-trigger" href="#relief-application-modal">click here</a>.
               </p>
               <div>
                 <a href="https://www.gofundme.com" class="btn-large waves-effect waves-light lime accent-1 black-text" target="_blank" rel="noopener noreferrer">DONATE<i class="material-icons right">launch</i></a>
@@ -70,8 +70,8 @@
               <p class="light">
                 Consider giving and getting something in return! Follow the links below 
                 to buy a gift card from your favorite company listed below. Alternatively, 
-                apply to receive a share of donations or list your gift cards for sale by
-                <a href="#">clicking here</a>.
+                apply to list your gift cards for sale by
+                <a class="modal-trigger" href="#gift-card-application-modal">clicking here</a>.
               </p>
               <div>
                 <a href="#gift-cards" class="btn-large waves-effect waves-light lime accent-1 black-text">BUY A GIFT CARD</a>
@@ -91,20 +91,26 @@
     <h3 class="grey-text">Some of Our Community's Incredible Companies</h3>
     <br>
     <div class="row" id="gift-cards">
-      <div class="col s12 m4">
+      <div class="col s12 m6 offset-m3">
         <div class="card">
           <div class="card-image">
             <img src="static/images/spaddys.png">
             <span class="card-title"></span>
-            <a href="https://www.spaddyscoffee.com" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">payment</i></a>
+            <a href="https://squareup.com/gift/3HR15P9CZY7YC/order" target="_blank" class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">payment</i></a>
           </div>
           <div class="card-content">
             <br>
-            <p>Spaddy's Coffee Company is a locally owned coffee shop located in Tampa, Fl with a focus on coffee & community. We offer a variety of specialty coffee offerings, as well as tea, cookies, cuban bread and light bites. </p>
+            <p>
+              Spaddy's Coffee Company is a locally owned coffee shop located 
+              in Tampa, Fl with a focus on coffee & community. We offer a 
+              variety of specialty coffee offerings, as well as tea, cookies, 
+              cuban bread and light bites. Click the red icon above to buy 
+              a gift card. Get a $100 gift card for 20 bucks!
+            </p>
           </div>
         </div>
       </div>
-      <div class="col s12 m4">
+      <!-- <div class="col s12 m4">
         <div class="card">
           <div class="card-image">
             <img src="static/images/urbanbungalow.jpeg">
@@ -132,18 +138,18 @@
             <br>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
        <!-- Modal Trigger -->
-      <a class="btn-large waves-effect waves-light lime accent-1 black-text modal-trigger" href="#application-modal">List Your Gift Card</a>
+      <a class="btn-large waves-effect waves-light lime accent-1 black-text modal-trigger" href="#gift-card-application-modal">List Your Gift Card</a>
 
       <!-- Modal Structure -->
-      <div id="application-modal" class="modal modal-fixed-footer">
+      <div id="relief-application-modal" class="modal modal-fixed-footer">
         <div class="modal-content">
           <div class="container center">
             <h4 class="grey-text">Donation Share & Gift Card List Application</h4>
             <div class="row">
-              <form id="application-form" class="col s12">
+              <form id="relief-application-form" class="col s12">
                 <div class="row">
                   <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
@@ -164,13 +170,6 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="Funding requested to support your business (lower the better)">
-                    <i class="material-icons prefix">attach_money</i>
-                    <input id="goal" type="number" class="validate" required>
-                    <label for="goal">Fundraising Goal</label>
-                  </div>
-                </div>
-                <div class="row">
                   <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to your business' website">
                     <i class="material-icons prefix">insert_link</i>
                     <input type="text" id="business_url" class="validate" required>
@@ -178,10 +177,24 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to you sell gift cards">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to where customers can buy your gift cards">
                     <i class="material-icons prefix">card_giftcard</i>
                     <input type="text" id="gift_card_url">
                     <label for="gift_card_url">Gift Card URL</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="Funding requested to support your business (lower the better)">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input id="goal" type="number" class="validate" required>
+                    <label for="goal">Fundraising Goal</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">people</i>
+                    <input id="number_of_employees" type="number" class="validate" required>
+                    <label for="number_of_employees">Number of Employees</label>
                   </div>
                 </div>
                 <div class="row">
@@ -189,6 +202,56 @@
                     <i class="material-icons prefix">library_books</i>
                     <textarea id="story" class="materialize-textarea validate" data-length="2000" required></textarea>
                     <label for="story">Your Story</label>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="red white-text lighten-2 waves-effect waves-teal btn-flat">SUBMIT</button>
+        </div>
+      </form>
+      </div>
+
+
+      <!-- Gift Card Modal -->
+      <div id="gift-card-application-modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <div class="container center">
+            <h4 class="grey-text">Gift Card List Application</h4>
+            <div class="row">
+              <form id="gift-card-application-form" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="gift-card-name" type="text" class="validate" required>
+                    <label for="gift-card-name">Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="gift-card-email" type="email" class="validate" required="required">
+                    <label for="gift-card-email">Email</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">phone_iphone</i>
+                    <input id="gift-card-phone" type="tel" class="validate" required>
+                    <label for="gift-card-phone">Phone</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to your business' website">
+                    <i class="material-icons prefix">insert_link</i>
+                    <input type="text" id="gift-card-business_url" class="validate" required>
+                    <label for="gift-card-business_url">Company Website</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field tooltipped col s12" data-position="bottom" data-tooltip="A link to where customers can buy your gift cards">
+                    <i class="material-icons prefix">card_giftcard</i>
+                    <input type="text" id="gift-card-gift_card_url" class="validate" required>
+                    <label for="gift-card-gift_card_url">Gift Card URL</label>
                   </div>
                 </div>
             </div>
@@ -229,7 +292,6 @@
         <div class="col l3 s12">
           <h5 class="white-text">Connect</h5>
           <ul class="footer-link">
-            <li><a class="lime-text text-accent-1" href="#!"><i class="material-icons">email</i></a></li>
             <li><a class="lime-text text-accent-1" href="https://github.com/rnhttr/tribe">GitHub</a></li>
           </ul>
         </div>
